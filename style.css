@@ -1,0 +1,15 @@
+.link_str.active {
+    text-decoration: underline brown;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-top: 3px;
+    background-color:rgba(187, 58, 58, 0.3);
+}
+
+.dot.active {
+    background-color: rgb(27, 2, 2);
+}
