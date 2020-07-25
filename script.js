@@ -2,7 +2,7 @@ const entities = [
       { link: 'Rostov-on-Don, Admiral',
         img: 'img/image2.1.jpg',
         dot: '0',
-        city: 'Rostov-on-Don LCD Admiral',
+        city: 'Rostov-on-Don \n LCD Admiral',
         area: '81 m2',
         time: '3,5 months',
         cost: 'Upon request'
@@ -11,7 +11,7 @@ const entities = [
       { link: 'Sochi Thieves',
         img: 'img/image2.2.jpg',
         dot: '1',
-        city: 'Sochi Thieves',
+        city: 'Sochi \n Thieves',
         area: '105 m2',
         time: '4 months',
         cost: 'Upon request'
@@ -20,7 +20,7 @@ const entities = [
       { link: 'Rostov-on-Don Patriotic',
         img: 'img/image2.3.jpg',
         dot: '2',
-        city: 'Rostov-on-Don Patriotic',
+        city: 'Rostov-on-Don \n Patriotic',
         area: '93 m2',
         time: '3 months',
         cost: 'Upon request'
@@ -83,16 +83,16 @@ const prepareCurrentSlide = ind => {
 
 dots.forEach((item, indexDot) => {
     item.addEventListener('click', () => {
-        index = indexDot;
-        setEntity(index);
-        prepareCurrentSlide(index);
+        currentIndex = indexDot;
+        setEntity(currentIndex);
+        prepareCurrentSlide(currentIndex);
     })
 })
 
 links.forEach((item, indexLink) => {
     item.addEventListener('click', () => {
-        index = indexLink;
-        setEntity(index);
-        prepareCurrentSlide(index);
+        currentIndex = indexLink;
+        setEntity(currentIndex);
+        prepareCurrentSlide(currentIndex);
     })
 })
