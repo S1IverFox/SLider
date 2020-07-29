@@ -28,20 +28,18 @@ const entities = [
     time: '3 months',
     cost: 'Upon request'
   }
-  ];
+];
 
-
-  const links = document.querySelectorAll('.link_str'),
-        dots = document.querySelectorAll('.dot')
-        img = document.querySelector('.slider_img'),
-        city = document.querySelector('.city'),
-        district = document.querySelector('.district')
-        area = document.querySelector('.area'),
-        time = document.querySelector('.time'),
-        cost = document.querySelector('.cost'),
-        prev = document.querySelector('.prev'),
-        next = document.querySelector('.next');
-
+const links = document.querySelectorAll('.link_str'),
+    dots = document.querySelectorAll('.dot')
+    img = document.querySelector('.slider_img'),
+    city = document.querySelector('.city'),
+    district = document.querySelector('.district')
+    area = document.querySelector('.area'),
+    time = document.querySelector('.time'),
+    cost = document.querySelector('.cost'),
+    prev = document.querySelector('.prev'),
+    next = document.querySelector('.next');
 
 const setEntity = (index) => {
     city.innerText = entities[index].city;
@@ -56,14 +54,23 @@ const setEntity = (index) => {
 let currentIndex = 0;
   
 prev.addEventListener('click', () => {
-  setEntity(currentIndex - 1);
-  currentIndex -= 1;
-  
+    if (currentIndex == 0) {
+        currentIndex = entities.length - 1;
+        setEntity(currentIndex);
+    } else {
+        currentIndex--;
+        setEntity(currentIndex);
+    }
 })
 
 next.addEventListener('click', () => {
-  setEntity(currentIndex + 1);
-  currentIndex += 1;
+    if (currentIndex == entities.length - 1) {
+        currentIndex = 0;
+        setEntity(currentIndex);
+    } else {
+        currentIndex++;
+        setEntity(currentIndex);
+    }
 })
 
 const activeDot = n => {
@@ -84,7 +91,6 @@ const prepareCurrentSlide = ind => {
     activeDot(ind);
     activeLink(ind);
 }
-
 
 dots.forEach((item, indexDot) => {
     item.addEventListener('click', () => {
